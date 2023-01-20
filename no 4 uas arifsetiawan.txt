@@ -1,0 +1,28 @@
+<?php 
+echo "<h2>Enkripse dengan algoritma Vigenere</h2>";
+$tulisan="Arif Setiawan";
+$kunci="SHOLATLAHSEB";
+$pnjtulisan=strlen($tulisan);
+for ($i=0; $i <$pnjtulisan ; $i++) { 
+	$k=ord($kunci[$i]);
+	$selisih=$k-ord('A');
+	$f=chr((ord($tulisan[$i])+$selisih) % 256);
+	echo $tulisan[$i]."=>".$f."<br>";
+}
+ ?>
+<br><br>
+<?php
+echo "<h2>Encoding dengan Base 64</h2>"; 
+print("Plaintextnya = Giova<br>");
+print("Chipertextnya =");
+print(base64_encode("Giova"));
+
+ ?>
+ <br><br>
+ <?php
+echo "<h2>Enkripse dengan algoritma str_rot13</h2>"; 
+print("Plaintextnya =Giova<br>");
+print("Chipertextnya =");
+print(str_rot13("Giova"));
+
+ ?>
